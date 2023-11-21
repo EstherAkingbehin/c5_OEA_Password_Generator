@@ -143,19 +143,31 @@ less than 8 = Your password must contain atleast 8 characters
 
 //Condition statement for password length
 if(password.length < 8){
-  alert(`Your password must contain atleast 8 characters`)
+  alert(`Your password must contain atleast 8 characters`);
 }else if(password.length >= 8){
-  //continue
+  //continue;
 }else if (password.length <= 129){
-  alert(`Password length must be less than 129 characters `)
+  alert(`Password length must be less than 129 characters `);
 }else if(pasword.length != numericCharacters.typeof){
-  alert(`Pasword length must be a number`)
+  alert(`Pasword length must be a number`);
 
 }
 
 
+var numbersOption = confirm(`add number characters to password`);
+var upercaseOption = confirm(`add uppercase characters to password`);
+var lowercaseOption = confirm(`add lowercase characters to password`);
+var speacialcharOption = confirm(`add special characters to the passwrord`);
+
+
+var passwordContent = {
+  numbersOption,
+  upercaseOption,
+  lowercaseOption,
+  speacialcharOption
+}
 
 //Condition statement for password content
-if(passwordcontent = 0){
-  alert(`password can not be generated, at least one chaaracter type must be selected`)
+if(passwordContent = 0){
+  alert(`password can not be generated, at least one chaaracter type must be selected`);
 }
