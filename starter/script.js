@@ -116,3 +116,46 @@ function writePassword() {
 
 // Add event listener to generate button
 generateBtn.addEventListener('click', writePassword);
+
+
+/*Thoughts 
+1. Prompt ('How many character do you want your password to have?)
+if statement 
+less than 8 = Your password must contain atleast 8 characters
+>=8 = 
+<=129 = password length must be less than 129 characters 
+!= number = pasword length must be a number
+
+2.confirm to add special characters to the passwrord "yes" or "cancel"
+
+3. confirm to add number characters to password yes" or "cancel"
+
+4. confirm to add uppercase characters to password yes" or "cancel"
+
+5. confirm to add lowercase characters to password yes" or "cancel"
+
+6. yes to atleast one of the questions, if all no (alert: password can not be generated, 
+  at least one chaaracter type must be selected)
+7.
+
+
+*/
+
+//Condition statement for password length
+if(password.length < 8){
+  alert(`Your password must contain atleast 8 characters`)
+}else if(password.length >= 8){
+  //continue
+}else if (password.length <= 129){
+  alert(`Password length must be less than 129 characters `)
+}else if(pasword.length != numericCharacters.typeof){
+  alert(`Pasword length must be a number`)
+
+}
+
+
+
+//Condition statement for password content
+if(passwordcontent = 0){
+  alert(`password can not be generated, at least one chaaracter type must be selected`)
+}
