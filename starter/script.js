@@ -88,19 +88,75 @@ var upperCasedCharacters = [
   'Z'
 ];
 
+var passwordlength;
+var generatedpassword;
+
 // Function to prompt user for password options
 function getPasswordOptions() {
-
+  console.log(passwordlength);
+  const numeric = confirm("Do you want password to contain numbers?");
+  console.log(numeric)
+  const ucase = confirm("Do you want password to include uppercase letters?");
+  console.log(ucase)
+  const lcase = confirm("Do you want password to include lowercase letters?");
+  console.log(lcase)
+  const specialChar = confirm("Do you want your password to include special characters?");
+  console.log(specialChar)
+  alert("Thanks for choosing options. Generating...");
+  
+  if (numeric === false && ucase === false && lcase === false && specialChar === false) {
+    alert(`password can not be generated, at least one chaaracter type must be selected`);
+    } else {
+      getRandom(numeric, ucase, lcase, specialChar);
+  }
 }
+
 
 // Function for getting a random element from an array
-function getRandom(arr) {
+function getRandom(numeric, ucase, lcase, specialChar) {
+  console.log(passwordlength)
+  var allCharacters = ''
 
+  if (lcase) allCharacters += lowerCasedCharacters.join('');
+  if (ucase) allCharacters += upperCasedCharacters.join('');
+  if (numeric) allCharacters += numericCharacters.join('');
+  if (specialChar) allCharacters += specialCharacters.join('');
+  generatedpassword = '';
+
+
+
+      for (var i = 0; i < passwordlength ; i++) {
+        var randomIndex = Math.floor(Math.random() * allCharacters.length);
+        generatedpassword += allCharacters.charAt(randomIndex);
+      }
+  console.log(generatedpassword);
 }
 
-// Function to generate password with user input
-function generatePassword() {
 
+
+// Function to generate password with user input
+var  generatePassword = function() {
+  passwordlength = prompt("How many character do you want your password to have?");
+  console.log(passwordlength)
+
+  if(passwordlength === null){
+    console.log("Password generator has been cancelled");
+    return '';
+  }
+  //Condition statement for password length
+  if(passwordlength <= 7){
+    alert("Your password must contain atleast 8 characters");
+    return '';
+  } else if (passwordlength <= 129){
+    console.log(passwordlength);
+    return getPasswordOptions();
+  }else if (passwordlength > 129){
+    alert("Password length must be less than 129 characters");
+    return '';
+  }else if(typeof passwordlength !== 'number'){
+    alert("Pasword length must be a number. Unable to generate unknown length");
+    return '';
+  }
 }
 
 // Get references to the #generate element
@@ -108,10 +164,11 @@ var generateBtn = document.querySelector('#generate');
 
 // Write password to the #password input
 function writePassword() {
-  var password = generatePassword();
+  password = generatePassword();
   var passwordText = document.querySelector('#password');
 
-  passwordText.value = password;
+  passwordText.value = generatedpassword;
+  console.log(generatedpassword)
 }
 
 // Add event listener to generate button
@@ -141,33 +198,33 @@ less than 8 = Your password must contain atleast 8 characters
 
 */
 
-//Condition statement for password length
-if(password.length < 8){
-  alert(`Your password must contain atleast 8 characters`);
-}else if(password.length >= 8){
-  //continue;
-}else if (password.length <= 129){
-  alert(`Password length must be less than 129 characters `);
-}else if(pasword.length != numericCharacters.typeof){
-  alert(`Pasword length must be a number`);
+// //Condition statement for password length
+// if(password.length < 8){
+//   alert(`Your password must contain atleast 8 characters`);
+// }else if(password.length >= 8){
+//   generatePassword()
+// }else if (password.length <= 129){
+//   alert(`Password length must be less than 129 characters `);
+// }else if(pasword.length != numericCharacters.typeof){
+//   alert(`Pasword length must be a number`);
 
-}
-
-
-var numbersOption = confirm(`add number characters to password`);
-var upercaseOption = confirm(`add uppercase characters to password`);
-var lowercaseOption = confirm(`add lowercase characters to password`);
-var speacialcharOption = confirm(`add special characters to the passwrord`);
+// }
 
 
-var passwordContent = {
-  numbersOption,
-  upercaseOption,
-  lowercaseOption,
-  speacialcharOption
-}
+// var numbersOption = confirm(`add number characters to password`); //returns boolean
+// var upercaseOption = confirm(`add uppercase characters to password`); //returns boolean
+// var lowercaseOption = confirm(`add lowercase characters to password`); //returns boolean
+// var speacialcharOption = confirm(`add special characters to the passwrord`); //returns boolean
 
-//Condition statement for password content
-if(passwordContent = 0){
-  alert(`password can not be generated, at least one chaaracter type must be selected`);
-}
+
+// var passwordContent = {
+//   numbersOption,
+//   upercaseOption,
+//   lowercaseOption,
+//   speacialcharOption
+// }
+
+// //Condition statement for password content
+// if(passwordContent = 0){
+//   alert(`password can not be generated, at least one chaaracter type must be selected`);
+// }
