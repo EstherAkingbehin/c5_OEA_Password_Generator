@@ -35,6 +35,10 @@ The following image shows the web application's appearance and functionality:
 
 ![password generator demo](../assets/05-javascript-challenge-demo.png)
 
+Appplication live link:
+https://estherakingbehin.github.io/c5_OEA_Password_Generator/
+
+
 
 
 ## Credits
