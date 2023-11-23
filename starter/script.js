@@ -143,11 +143,9 @@ var  generatePassword = function() {
     console.log("Password generator has been cancelled");
     return '';
   }
+
   //Condition statement for password length
-  if (!Number.isInteger(passwordlength) || passwordlength <= 0) {
-    alert("Please enter a valid whole number for password length.");
-    return '';
-  }else if(passwordlength <= 7){
+  if(passwordlength <= 7){
     alert("Your password must contain atleast 8 characters");
     return '';
   } else if (passwordlength <= 129){
