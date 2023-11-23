@@ -27,12 +27,12 @@ This project can be installed using the SSH or HTTP key in GitHub (Given one of 
 
 The application generates a password when the button is clicked. The user is presented a series of prompts for password criteria.
 - Length of password
-      . At least 8 characters but no more than 128.
+      - At least 8 characters but no more than 128.
 - Character types
-      . Lowercase
-      . Uppercase
-      . Numeric
-      . Special characters ($@%&*, etc)
+      - Lowercase
+      - Uppercase
+      - Numeric
+      - Special characters ($@%&*, etc)
 - Code should validate for each input and at least one character type should be selected
 - Once prompts are answered then the password should be generated and written to the page
 
